@@ -22,11 +22,11 @@ function style(feature) {
 
 //マウスオーバー、マウスアウト、クリックのイベントを登録する
 function onEachFeature(feature, layer) {
-      layer.bindPopup('<p>Hey!</p>')
+   var props = feature.properties;
+   layer.bindPopup('<b>' + props.施設名称 + '</b><br />' + props.住所)
 }
 
 var geojson;
-geojson = L.geoJson(area, {
-   style: style,
+geojson = L.geoJson(points, {
    onEachFeature: onEachFeature
 }).addTo(map);
