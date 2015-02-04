@@ -17,6 +17,7 @@
 
 button {
    width: 90%;
+   height: 1.5em;
 }
 
 #gnss_on {
