@@ -14,7 +14,7 @@ function lock_on() {
    //on スイッチを表示する
    function lock_ok(position) {
       map.setView([position.coords.latitude, position.coords.longitude]);
-      document.getElementById("gnss_on").style.display = "";
+      document.getElementById("gnss_on").style.display = "inline";
       document.getElementById("gnss_off").style.display = "none";
    };
 
@@ -32,5 +32,5 @@ function lock_off() {
 
    //off スイッチを表示する
    document.getElementById("gnss_on").style.display = "none";
-   document.getElementById("gnss_off").style.display = "";
+   document.getElementById("gnss_off").style.display = "inline";
 }
