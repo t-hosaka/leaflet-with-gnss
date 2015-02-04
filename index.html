@@ -12,14 +12,23 @@
 
       <!-- 地理院地図表示用 JavaScript 読み込み -->
       <link rel="stylesheet" href="./css/main.css" />
+      <link rel="stylesheet" href="./css/gnss.css" />
 
       <!-- GeoJSON 読み込み -->
       <script src="./data/facilities.js"></script>
 
       <title>地理院地図テスト</title>
    </head>
-   <body onload="init();">
+   <body>
       <div id="map"></div>
       <script src="./js/main.js"></script>
+
+      <!-- GNSS スイッチ -->
+      <script src="./js/gnss.js"></script>
+      <div id="gnss">
+         <p>Use GNSS</p>
+         <button type="button" id="gnss_on" value="on" style="display: none;" onclick="lock_off();" >on</button>
+         <button type="button" id="gnss_off" value="off" style="display: " onclick="lock_on();">off</button>
+      </div>
    </body>
 </html>
