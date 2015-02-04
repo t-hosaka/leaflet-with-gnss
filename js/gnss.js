@@ -1,11 +1,12 @@
+//位置情報取得に対するオプション
+var lock_opt = {
+   enableHighAccuracy: true,
+   timeout: 10000,
+   maximumAge: 0
+};
+
 //GNSS リアルタイム測位を開始する
 function lock_on() {
-   //位置情報取得に対するオプション
-   var lock_opt = {
-      enableHighAccuracy: true,
-      timeout: 10000,
-      maximumAge: 0
-   };
 
    //オプションをセットして位置情報の取得を開始
    var GNSS_lock = navigator.geolocation.watchPosition(lock_ok, lock_ng, lock_opt);
@@ -33,4 +34,21 @@ function lock_off() {
    //off スイッチを表示する
    document.getElementById("gnss_on").style.display = "none";
    document.getElementById("gnss_off").style.display = "inline";
+}
+
+//現在地を中心にする
+function set_here() {
+
+   //オプションをセットして位置情報を取得
+   var GNSS_here = navigator.geolocation.getCurrentPosition(here_ok, here_ng, lock_opt);
+
+   //位置情報取得が成功したら取得した位置を中心に描画
+   function here_ok(position) {
+      map.setView([position.coords.latitude, position.coords.longitude]);
+   }
+
+   //位置情報が取得できなかった場合の処理
+   function here_ng() {
+      window.alert("位置情報を利用できません");
+   };
 }

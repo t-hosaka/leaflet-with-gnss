@@ -26,9 +26,12 @@
       <!-- GNSS スイッチ -->
       <script src="./js/gnss.js"></script>
       <div id="gnss">
-         <p>Use GNSS</p>
+         <p>GNSS追尾</p>
          <button type="button" id="gnss_on" value="on" style="display: none;" onclick="lock_off();" >on</button>
          <button type="button" id="gnss_off" value="off" style="display: inline" onclick="lock_on();">off</button>
+      </div>
+      <div id="here">
+         <img src="./img/here.png" alt="現在地" onclick="set_here();"/>
       </div>
    </body>
 </html>
